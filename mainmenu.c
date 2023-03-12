@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "systemfunctions.h"
-#include "opendoor.h"
+#include "doorstatus.h"
 #include "cardmanagement.h"
 #include "mainmenu.h"
 
@@ -28,7 +28,7 @@ void mainMenu()
         switch (menuChoice)
         {
             case 1:
-                openDoor(1);
+                doorStatus(1);
                 break;
             case 2:
                 listCards(&number);

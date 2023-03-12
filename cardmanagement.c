@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "mainmenu.h"
-#include "opendoor.h"
+#include "doorstatus.h"
 #include "systemfunctions.h"
 #include "cardmanagement.h"
 
@@ -47,7 +47,7 @@ void cardManager(CardStack *number)
             default:
                 printf("Input error.");
                 hitEnter();
-                
+                break;
         }
     }
 }
@@ -72,14 +72,12 @@ void addCard(CardStack *number)
 void inputCard(Card *new, CardStack *number)
 {
     bool inputting = true;
-    bool cardExists;
     int newCardNumber;
 
     while(inputting)
     {
         printf("Card number (4-6 digits): ");
         scanf(" %d", &newCardNumber);
-        cardExists = cardCreated(newCardNumber, number);
         if(newCardNumber < 1000 || newCardNumber > 999999)
         {
             inputting = false;
@@ -87,7 +85,7 @@ void inputCard(Card *new, CardStack *number)
             hitEnter();
             number->numberOfCards--;
         }
-        else if(cardExists)
+        else if(findCard(newCardNumber, number) != -1)
         {
             printf("Card already exists.\n");
             hitEnter();
@@ -159,18 +157,6 @@ void setAccess(CardStack *number)
         
     }
     hitEnter();
-}
-
-bool cardCreated(int searchTarget, const CardStack *number)
-{
-    for(int i = 0; i < number->numberOfCards; i++)
-    {
-        if(number->cards[i].cardNumber == searchTarget)
-        {
-            return true;
-        }
-    }
-    return false;
 }
 
 void listCards(const CardStack *number)

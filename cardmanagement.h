@@ -18,7 +18,6 @@ void cardManager(CardStack *number);
 void addCard(CardStack *number);
 void inputCard(Card *new, CardStack *number);
 void setAccess(CardStack *number);
-bool cardCreated(int numberOfCards, const CardStack *number);
 void listCards(const CardStack *number);
 int findCard(int cardNum, const CardStack *number);
 

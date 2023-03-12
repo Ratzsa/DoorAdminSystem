@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "mainmenu.h"
-#include "opendoor.h"
+#include "doorstatus.h"
 #include "systemfunctions.h"
 #include "cardmanagement.h"
 

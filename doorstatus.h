@@ -1,6 +1,6 @@
 #ifndef _DOOR_STATUS
 #define _DOOR_STATUS
 
-void openDoor(int stateOfLamp);
+void doorStatus(int stateOfLamp);
 
 #endif
