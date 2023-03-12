@@ -1,0 +1,14 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\YA\\StruktC\\DoorAdminSystem",
+            "binaryPath": "c:\\YA\\StruktC\\DoorAdminSystem\\main.exe",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "stdbool.h": "c",
+        "cardmanagement.h": "c",
+        "time.h": "c"
+    }
+}
