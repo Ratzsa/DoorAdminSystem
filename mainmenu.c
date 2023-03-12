@@ -31,12 +31,10 @@ void mainMenu()
                 openDoor(1);
                 break;
             case 2:
-                printf("Menu choice 2\n");
-                hitEnter();
+                listCards(&number);
                 break;
             case 3:
                 cardManager(&number);
-                hitEnter();
                 break;
             case 4:
                 printf("Exiting program\n");

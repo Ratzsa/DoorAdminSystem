@@ -36,7 +36,7 @@ void cardManager(CardStack *number)
                 }
                 else
                 {
-                    setAccess();
+                    setAccess(number);
                 }
                 break;
 
@@ -66,43 +66,146 @@ void addCard(CardStack *number)
         number->cards = (Card *)realloc(number->cards, number->numberOfCards * sizeof(Card));
     }
 
-    inputCard(&number->cards[number->numberOfCards - 1]);
+    inputCard(&number->cards[number->numberOfCards - 1], number);
 }
 
-void inputCard(Card *new)
+void inputCard(Card *new, CardStack *number)
 {
     bool inputting = true;
-    // bool cardExists = false;
+    bool cardExists;
     int newCardNumber;
 
     while(inputting)
     {
         printf("Card number (4-6 digits): ");
         scanf(" %d", &newCardNumber);
+        cardExists = cardCreated(newCardNumber, number);
         if(newCardNumber < 1000 || newCardNumber > 999999)
         {
             inputting = false;
             printf("Not a valid card number.\n");
             hitEnter();
+            number->numberOfCards--;
+        }
+        else if(cardExists)
+        {
+            printf("Card already exists.\n");
+            hitEnter();
+            inputting = false;
+            number->numberOfCards--;
         }
         else
         {
             new->cardNumber = newCardNumber;
-            new->state = 2;
+            new->access = 2;
+            new->dateAdded = time(0);
             inputting = false;
         }
     }
 }
 
-void setAccess()
+void setAccess(CardStack *number)
 {
-    printf("Set access selected.\nThings work so far!\n");
+    int input;
+    int menuInput;
+    int cardExists;
+    bool accessMenu = true;
+
+    clearConsole();
+    printf("Enter card number: ");
+    scanf(" %d", &input);
+    cardExists = findCard(input, number);
+
+    if(cardExists < 0)
+    {
+        printf("Card not found.\n");
+    }
+    else
+    {
+        while(accessMenu)
+        {
+            printf("This card has ");
+            if(number->cards[cardExists].access == 1)
+            {
+                printf("access.\n");
+            }
+            else
+            {
+                printf("no access.\n");
+            }
+            printf("Enter 1 for access, 2 for no access.\n");
+            scanf(" %d", &menuInput);
+
+            switch(menuInput)
+            {
+                case 1:
+                    number->cards[cardExists].access = 1;
+                    printf("Card has access.\n");
+                    accessMenu = false;
+                    break;
+
+                case 2:
+                    number->cards[cardExists].access = 2;
+                    printf("Card has no access.\n");
+                    accessMenu = false;
+                    break;
+
+                default:
+                    printf("Incorrect input.\n");
+                    accessMenu = false;
+                    break;
+            }
+        }
+        
+    }
     hitEnter();
 }
 
-bool findCard(int numberOfCards, int searchTarget)
+bool cardCreated(int searchTarget, const CardStack *number)
 {
-    
+    for(int i = 0; i < number->numberOfCards; i++)
+    {
+        if(number->cards[i].cardNumber == searchTarget)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
-    return true;
+void listCards(const CardStack *number)
+{
+    char dateAdded[100];
+    clearConsole();
+    printf("All cards in system\n");
+    for(int i = 0; i < number->numberOfCards; i++)
+    {
+        struct tm *convertedTime;
+        convertedTime = localtime(&number->cards[i].dateAdded);
+        strftime(dateAdded, 100, "%y-%m-%d", convertedTime);
+
+        printf("%d\t", number->cards[i].cardNumber);
+        if(number->cards[i].access == 1)
+        {
+            printf("ACCESS   \t");
+        }
+        else
+        {
+            printf("NO ACCESS\t");
+        }
+        printf("Date added: %s\n", dateAdded);
+    }
+    hitEnter();
+}
+
+int findCard(int cardNum, const CardStack *number)
+{
+    for(int i = 0; i < number->numberOfCards; i++)
+    {
+        if(number->cards[i].cardNumber == cardNum)
+        {
+            return i;
+        }
+    }
+    return -1;
 }

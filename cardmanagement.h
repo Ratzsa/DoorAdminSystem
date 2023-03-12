@@ -4,7 +4,8 @@
 typedef struct
 {
     int cardNumber;
-    int state;
+    int access;
+    time_t dateAdded;
 } Card;
 
 typedef struct
@@ -15,8 +16,10 @@ typedef struct
 
 void cardManager(CardStack *number);
 void addCard(CardStack *number);
-void inputCard(Card *new);
-void setAccess();
-bool findCard(int numberOfCards, int searchTarget);
+void inputCard(Card *new, CardStack *number);
+void setAccess(CardStack *number);
+bool cardCreated(int numberOfCards, const CardStack *number);
+void listCards(const CardStack *number);
+int findCard(int cardNum, const CardStack *number);
 
 #endif
