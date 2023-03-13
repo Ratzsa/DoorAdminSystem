@@ -9,19 +9,15 @@ void doorStatus(int stateOfLamp)
     {
         case 0:
             printf("CURRENTLY LAMP IS: Off\n");
-            // fflush(stdin);
-            sleep(3);
             break;
 
         case 1:
             printf("CURRENTLY LAMP IS: Green\n");
-            // fflush(stdin);
             sleep(3);
             break;
         
         default:
             printf("CURRENTLY LAMP IS: Red\n");
-            // fflush(stdin);
             sleep(3);
             break;
     }

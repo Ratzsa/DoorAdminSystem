@@ -42,6 +42,7 @@ void mainMenu()
                 inMenu = false;
                 break;
             case 9:
+                clearInput();
                 cardTest(&number);
                 break;
             

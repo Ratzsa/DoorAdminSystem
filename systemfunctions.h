@@ -3,5 +3,6 @@
 
 void hitEnter();
 void clearConsole();
+void clearInput();
 
 #endif

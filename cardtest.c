@@ -20,7 +20,6 @@ void cardTest(CardStack *number)
     while(scanningCard)
     {
         clearConsole();
-        fflush(stdin);
         printf("Please scan card to enter or X to go back to admin mode.\n");
         doorStatus(0);
         fgets(input, 10, stdin);
