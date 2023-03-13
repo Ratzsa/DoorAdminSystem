@@ -16,7 +16,6 @@ void mainMenu()
     while(inMenu)
     {
         clearConsole();
-        fflush(stdin);
         printf("Admin menu\n");
         printf("1. Remote open door\n");
         printf("2. List all cards in system\n");
@@ -38,16 +37,16 @@ void mainMenu()
                 cardManager(&number);
                 break;
             case 4:
-                printf("Exiting program\n");
+                printf("Exiting program.");
                 inMenu = false;
                 break;
             case 9:
-                clearInput();
+                // clearInput();
                 cardTest(&number);
                 break;
             
             default:
-                printf("Input error.\n");
+                printf("Input error. Press enter to continue.");
                 hitEnter();
                 break;
         }

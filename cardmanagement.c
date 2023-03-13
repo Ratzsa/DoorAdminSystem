@@ -182,6 +182,7 @@ void listCards(const CardStack *number)
         }
         printf("Date added: %s\n", dateAdded);
     }
+    printf("Press enter to continue.");
     hitEnter();
 }
 

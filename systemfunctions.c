@@ -13,7 +13,7 @@ void hitEnter()
     while (1) 
     {
         char pressEnter[1000];
-        gets(pressEnter);
+        fgets(pressEnter, 1000, stdin);
         if(strcmp(pressEnter,"") == 0 || strcmp(pressEnter,"") != 0)
         {
         // sleep(1);
@@ -30,5 +30,8 @@ void clearConsole()
 
 void clearInput()
 {    
-    while(getchar() != '\n');
+    while(getchar() != '\n')
+    {
+
+    }
 }

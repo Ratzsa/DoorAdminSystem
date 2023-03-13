@@ -17,6 +17,8 @@ void cardTest(CardStack *number)
     bool scanningCard = true;
     int goodInput;
 
+    clearInput();
+
     while(scanningCard)
     {
         clearConsole();
@@ -40,13 +42,13 @@ void cardTest(CardStack *number)
                 }
                 else
                 {
-                    printf("Card not found. Press enter to continue.\n");
+                    printf("Card not found. Press enter to continue.");
                     hitEnter();
                 }
                 break;
             
             default:
-                printf("Incorrect input. Press enter to continue.\n");
+                printf("Incorrect input. Press enter to continue.");
                 hitEnter();
                 break;
         }
@@ -56,7 +58,7 @@ void cardTest(CardStack *number)
 int checkInput(char inputText[])
 {
     int length = strlen(inputText);
-    if(length == 1 && (inputText[0] == 'x' || inputText[0] == 'X'))
+    if(length == 1 && (inputText[0] == ('x') || inputText[0] == 'X'))
     {
         return 1;
     }
