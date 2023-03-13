@@ -29,7 +29,7 @@ void clearConsole()
 }
 
 void clearInput()
-{    
+{
     while(getchar() != '\n')
     {
 

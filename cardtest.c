@@ -13,7 +13,7 @@ int checkInput(char inputText[]);
 void cardTest(CardStack *number)
 {
     int cardSearch;
-    char input[10];
+    char input[20];
     bool scanningCard = true;
     int goodInput;
 
@@ -24,8 +24,9 @@ void cardTest(CardStack *number)
         clearConsole();
         printf("Please scan card to enter or X to go back to admin mode.\n");
         doorStatus(0);
-        fgets(input, 10, stdin);
-        input[strcspn(input, "\r\n")] = 0;
+        // fgets(input, 1000, stdin);
+        // input[strcspn(input, "\r\n")] = 0;
+        scanf(" %10s", input);
         goodInput = checkInput(input);
 
         switch(goodInput)
