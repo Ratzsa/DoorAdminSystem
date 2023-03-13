@@ -5,6 +5,7 @@
 #include "doorstatus.h"
 #include "cardmanagement.h"
 #include "mainmenu.h"
+#include "cardtest.h"
 
 void mainMenu()
 {
@@ -41,8 +42,7 @@ void mainMenu()
                 inMenu = false;
                 break;
             case 9:
-                printf("Menu choice 9\n");
-                hitEnter();
+                cardTest(&number);
                 break;
             
             default:

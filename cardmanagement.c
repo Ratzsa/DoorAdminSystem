@@ -7,6 +7,7 @@
 #include "doorstatus.h"
 #include "systemfunctions.h"
 #include "cardmanagement.h"
+#include "cardtest.h"
 
 void cardManager(CardStack *number)
 {

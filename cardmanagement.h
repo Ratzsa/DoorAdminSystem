@@ -1,6 +1,8 @@
 #ifndef _CARD_MANAGEMENT
 #define _CARD_MANAGEMENT
 
+#include <time.h>
+
 typedef struct
 {
     int cardNumber;

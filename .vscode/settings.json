@@ -9,6 +9,7 @@
     "files.associations": {
         "stdbool.h": "c",
         "cardmanagement.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "systemfunctions.h": "c"
     }
 }
