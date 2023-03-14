@@ -22,9 +22,8 @@ void mainMenu()
         printf("3. Add/remove access\n");
         printf("4. Exit\n");
         printf("9. FAKE TEST SCAN CARD\n");
-
-        scanf(" %5d", &menuChoice);
-
+        menuChoice = -1;
+        scanf(" %d", &menuChoice);
         switch (menuChoice)
         {
             case 1:
@@ -41,7 +40,6 @@ void mainMenu()
                 inMenu = false;
                 break;
             case 9:
-                // clearInput();
                 cardTest(&number);
                 break;
             

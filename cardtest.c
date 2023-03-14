@@ -17,7 +17,7 @@ void cardTest(CardStack *number)
     bool scanningCard = true;
     int goodInput;
 
-    clearInput();
+    // clearInput();
 
     while(scanningCard)
     {
@@ -43,14 +43,17 @@ void cardTest(CardStack *number)
                 }
                 else
                 {
-                    printf("Card not found. Press enter to continue.");
-                    hitEnter();
+                    printf("Card not in system. ");
+                    doorStatus(3);
+                    // clearInput();
                 }
                 break;
             
             default:
                 printf("Incorrect input. Press enter to continue.");
                 hitEnter();
+                // clearInput();
+                // clearInput();
                 break;
         }
     }

@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <windows.h>
 #include <stdbool.h>
 #include <ctype.h>
 #include <unistd.h>
 
 void clearInput();
 
+/*
 void hitEnter()
 {
     clearInput();
@@ -14,13 +14,19 @@ void hitEnter()
     {
         char pressEnter[1000];
         fgets(pressEnter, 1000, stdin);
+        // scanf(" %s", pressEnter);
         if(strcmp(pressEnter,"") == 0 || strcmp(pressEnter,"") != 0)
         {
-        // sleep(1);
-        break;
+            break;
         }
     }
-    return;
+}
+*/
+
+void hitEnter()
+{
+    clearInput();
+    clearInput();
 }
 
 void clearConsole()

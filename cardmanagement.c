@@ -155,7 +155,6 @@ void setAccess(CardStack *number)
                     break;
             }
         }
-        
     }
     hitEnter();
 }
