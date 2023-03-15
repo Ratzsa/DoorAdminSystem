@@ -4,5 +4,8 @@
 void hitEnter();
 void clearConsole();
 void clearInput();
+void redColour();
+void resetColour();
+void greenColour();
 
 #endif

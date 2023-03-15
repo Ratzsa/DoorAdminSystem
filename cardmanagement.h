@@ -16,7 +16,7 @@ typedef struct
     int numberOfCards;
 } CardStack;
 
-void cardManager(CardStack *number);
+void cardManager();
 Card findCardInFile(int cardNum);
 void inputCardToFile();
 void listCardsFromFile();

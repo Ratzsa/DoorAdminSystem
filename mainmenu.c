@@ -9,7 +9,6 @@
 
 void mainMenu()
 {
-    CardStack number = {NULL, 0};
     int menuChoice;
     bool inMenu = true;
 
@@ -33,14 +32,14 @@ void mainMenu()
                 listCardsFromFile();
                 break;
             case 3:
-                cardManager(&number);
+                cardManager();
                 break;
             case 4:
                 printf("Exiting program.");
                 inMenu = false;
                 break;
             case 9:
-                cardTest(&number);
+                cardTest();
                 break;
             
             default:

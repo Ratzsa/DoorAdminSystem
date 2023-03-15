@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <ctype.h>
-#include <unistd.h>
 
 void clearInput();
+void redColour();
+void resetColour();
+void greenColour();
 
 void hitEnter()
 {
@@ -23,4 +23,19 @@ void clearInput()
     {
 
     }
+}
+
+void redColour() 
+{
+    printf("\033[1;31m");
+}
+
+void resetColour() 
+{
+    printf("\033[0m");
+}
+
+void greenColour()
+{
+    printf("\033[0;32m");
 }

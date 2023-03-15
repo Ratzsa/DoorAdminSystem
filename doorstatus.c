@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include "systemfunctions.h"
 
 void doorStatus(int stateOfLamp)
 {
@@ -11,15 +12,21 @@ void doorStatus(int stateOfLamp)
             printf("CURRENTLY LAMP IS: Off\n");
             break;
 
-        case 1:
-            printf("CURRENTLY LAMP IS: Green\n");
+        case 1:            
+            printf("CURRENTLY LAMP IS: ");
+            greenColour();
+            printf("Green\n");
             sleep(3);
+            resetColour();
             break;
         
         default:
-            printf("CURRENTLY LAMP IS: Red\n");
+            
+            printf("CURRENTLY LAMP IS: ");
+            redColour();
+            printf("Red\n");
             sleep(3);
+            resetColour();
             break;
-    }
-    
+    }    
 }

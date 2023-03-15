@@ -9,7 +9,7 @@
 #include "cardmanagement.h"
 #include "cardtest.h"
 
-void cardManager(CardStack *number)
+void cardManager()
 {
     bool managingCards = true;
     int cardMenuInput;
@@ -26,7 +26,7 @@ void cardManager(CardStack *number)
         switch(cardMenuInput)
         {
             case 1:
-                inputCardToFile(number);
+                inputCardToFile();
                 break;
 
             case 2:

@@ -12,7 +12,6 @@ int checkInput(char inputText[]);
 
 void cardTest()
 {
-    // int cardSearch;
     char input[20];
     bool scanningCard = true;
     int goodInput;
