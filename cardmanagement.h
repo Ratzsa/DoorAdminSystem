@@ -22,5 +22,9 @@ void inputCard(Card *new, CardStack *number);
 void setAccess(CardStack *number);
 void listCards(const CardStack *number);
 int findCard(int cardNum, const CardStack *number);
+Card findCardInFile(int cardNum);
+void inputCardToFile();
+void listCardsFromFile();
+void setAccessInFile();
 
 #endif

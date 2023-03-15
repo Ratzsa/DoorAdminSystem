@@ -30,7 +30,7 @@ void mainMenu()
                 doorStatus(1);
                 break;
             case 2:
-                listCards(&number);
+                listCardsFromFile();
                 break;
             case 3:
                 cardManager(&number);
