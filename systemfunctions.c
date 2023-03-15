@@ -6,23 +6,6 @@
 
 void clearInput();
 
-/*
-void hitEnter()
-{
-    clearInput();
-    while (1) 
-    {
-        char pressEnter[1000];
-        fgets(pressEnter, 1000, stdin);
-        // scanf(" %s", pressEnter);
-        if(strcmp(pressEnter,"") == 0 || strcmp(pressEnter,"") != 0)
-        {
-            break;
-        }
-    }
-}
-*/
-
 void hitEnter()
 {
     clearInput();

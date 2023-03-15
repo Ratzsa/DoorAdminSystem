@@ -10,22 +10,19 @@
 
 int checkInput(char inputText[]);
 
-void cardTest(CardStack *number)
+void cardTest()
 {
-    int cardSearch;
+    // int cardSearch;
     char input[20];
     bool scanningCard = true;
     int goodInput;
-
-    // clearInput();
+    Card cardSearch;
 
     while(scanningCard)
     {
         clearConsole();
         printf("Please scan card to enter or X to go back to admin mode.\n");
         doorStatus(0);
-        // fgets(input, 1000, stdin);
-        // input[strcspn(input, "\r\n")] = 0;
         scanf(" %10s", input);
         goodInput = checkInput(input);
 
@@ -36,24 +33,21 @@ void cardTest(CardStack *number)
                 break;
 
             case 2:
-                cardSearch = findCard(atoi(input), number);
-                if(cardSearch >= 0)
+                cardSearch = findCardInFile(atoi(input));
+                if(cardSearch.cardNumber >= 0)
                 {
-                    doorStatus(number->cards[cardSearch].access);
+                    doorStatus(cardSearch.access);
                 }
                 else
                 {
                     printf("Card not in system. ");
                     doorStatus(3);
-                    // clearInput();
                 }
                 break;
             
             default:
                 printf("Incorrect input. Press enter to continue.");
                 hitEnter();
-                // clearInput();
-                // clearInput();
                 break;
         }
     }
