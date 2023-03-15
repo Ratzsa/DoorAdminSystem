@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <time.h>
-#include <unistd.h>
-#include "mainmenu.h"
-#include "doorstatus.h"
 #include "systemfunctions.h"
 #include "cardmanagement.h"
-#include "cardtest.h"
 
 void cardManager()
 {
@@ -129,8 +124,6 @@ void listCardsFromFile()
 
     while(fread(&listCard, sizeof(Card), 1, cardFile) == 1)
     {
-        // int p = fread(&listCard, sizeof(Card), 1, cardFile);
-        
         struct tm *convertedTime;
         convertedTime = localtime(&listCard.dateAdded);
         strftime(dateAdded, 100, "%y-%m-%d", convertedTime);
@@ -148,6 +141,7 @@ void listCardsFromFile()
         
     }
     fclose(cardFile);
+    printf("Press enter to continue.\n");
     hitEnter();
 }
 
