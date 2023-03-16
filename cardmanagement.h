@@ -10,12 +10,6 @@ typedef struct
     time_t dateAdded;
 } Card;
 
-typedef struct
-{
-    Card *cards;
-    int numberOfCards;
-} CardStack;
-
 void cardManager();
 Card findCardInFile(int cardNum);
 void inputCardToFile();

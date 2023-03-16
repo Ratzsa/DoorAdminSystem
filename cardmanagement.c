@@ -82,7 +82,6 @@ void inputCardToFile()
 Card findCardInFile(int cardNum)
 {
     FILE *cardFile = fopen("cards.crd", "rb");
-    FILE *cardPtr;
     if(cardFile == NULL)
     {
         printf("File error.\n");
@@ -90,16 +89,14 @@ Card findCardInFile(int cardNum)
     }
     Card returnCard;
 
-    cardPtr = cardFile;
-    while(!feof(cardPtr))
+    while(!feof(cardFile))
     {
-        fread(&returnCard, sizeof(Card), 1, cardPtr);
+        fread(&returnCard, sizeof(Card), 1, cardFile);
         if(returnCard.cardNumber == cardNum)
         {
             fclose(cardFile);
             return returnCard;
         }
-        cardFile = cardPtr;
     }
     fclose(cardFile);
     returnCard.cardNumber = -1;
