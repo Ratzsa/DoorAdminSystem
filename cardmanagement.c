@@ -155,7 +155,6 @@ void setAccessInFile()
     int noAccess = 2;
 
     FILE *cardFile = fopen("cards.crd", "rb+");
-    FILE *cardPtr;
     if(cardFile == NULL)
     {
         printf("File error or no cards entered. Press enter to continue.\n");
@@ -167,10 +166,9 @@ void setAccessInFile()
     scanf(" %d", &cardNum);
     clearInput();
 
-    cardPtr = cardFile;
-    while(!feof(cardPtr))
+    while(!feof(cardFile))
     {
-        fread(&accessCard, sizeof(Card), 1, cardPtr);
+        fread(&accessCard, sizeof(Card), 1, cardFile);
         if(accessCard.cardNumber == cardNum)
         {
             found++;
@@ -214,7 +212,6 @@ void setAccessInFile()
             }
             return;
         }
-        cardFile = cardPtr;
         structCounter++;
     }
 

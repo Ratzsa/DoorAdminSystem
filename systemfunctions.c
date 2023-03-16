@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 void clearInput();
-void redColour();
-void resetColour();
-void greenColour();
+// void redColour();
+// void resetColour();
+// void greenColour();
 
 void hitEnter()
 {
