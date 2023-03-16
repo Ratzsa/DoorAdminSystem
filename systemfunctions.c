@@ -24,9 +24,7 @@ void clearInput()
 
 void doorDelay()
 {
-    int milliSeconds = 3000;
-    clock_t startTime = clock();
-    clock_t delayTime = startTime + milliSeconds;
+    clock_t delayTime = clock() + 3000;
     while(delayTime > clock())
     {
 
