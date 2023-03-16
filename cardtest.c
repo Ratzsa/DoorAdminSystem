@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include "systemfunctions.h"
 #include <stdlib.h>
-#include <time.h>
 #include "cardmanagement.h"
 
 int checkInput(char inputText[]);
