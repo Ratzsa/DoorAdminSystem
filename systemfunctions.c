@@ -1,9 +1,7 @@
 #include <stdio.h>
+#include <time.h>
 
 void clearInput();
-// void redColour();
-// void resetColour();
-// void greenColour();
 
 void hitEnter()
 {
@@ -19,6 +17,17 @@ void clearConsole()
 void clearInput()
 {
     while(getchar() != '\n')
+    {
+
+    }
+}
+
+void doorDelay()
+{
+    int milliSeconds = 3000;
+    clock_t startTime = clock();
+    clock_t delayTime = startTime + milliSeconds;
+    while(delayTime > clock())
     {
 
     }
