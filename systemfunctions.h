@@ -4,7 +4,6 @@
 void hitEnter();
 void clearConsole();
 void clearInput();
-void doorDelay();
 void redColour();
 void resetColour();
 void greenColour();

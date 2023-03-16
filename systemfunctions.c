@@ -22,15 +22,6 @@ void clearInput()
     }
 }
 
-void doorDelay()
-{
-    clock_t delayTime = clock() + 3000;
-    while(delayTime > clock())
-    {
-
-    }
-}
-
 void redColour() 
 {
     printf("\033[1;31m");

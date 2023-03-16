@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "systemfunctions.h"
+#include <unistd.h>
 
 void doorStatus(int stateOfLamp)
 {
@@ -13,7 +14,7 @@ void doorStatus(int stateOfLamp)
             printf("CURRENTLY LAMP IS: ");
             greenColour();
             printf("Green\n");
-            doorDelay();
+            sleep(3);
             resetColour();
             break;
         
@@ -22,7 +23,7 @@ void doorStatus(int stateOfLamp)
             printf("CURRENTLY LAMP IS: ");
             redColour();
             printf("Red\n");
-            doorDelay();
+            sleep(3);
             resetColour();
             break;
     }    
