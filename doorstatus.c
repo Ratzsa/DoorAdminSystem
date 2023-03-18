@@ -4,14 +4,14 @@
 
 void doorStatus(int stateOfLamp)
 {
+    printf("CURRENTLY LAMP IS: ");
     switch(stateOfLamp)
     {
         case 0:
-            printf("CURRENTLY LAMP IS: Off\n");
+            printf(" Off\n");
             break;
 
-        case 1:            
-            printf("CURRENTLY LAMP IS: ");
+        case 1:
             greenColour();
             printf("Green\n");
             sleep(3);
@@ -19,8 +19,6 @@ void doorStatus(int stateOfLamp)
             break;
         
         default:
-            
-            printf("CURRENTLY LAMP IS: ");
             redColour();
             printf("Red\n");
             sleep(3);
